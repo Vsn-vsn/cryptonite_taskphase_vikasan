@@ -8,3 +8,6 @@ We invoked the 'run' through the command '/challenge/run' which is an absolute p
 # Position thy self
 In this level we had to navigate to another directory using th 'cd' command. The 'cd' command is used to change our present working directory. For this challenge we had to navigate using 
 'cd  /usr/bin' and then run '/challenge/run' to obtain the flag.
+
+# Position elsewhere
+In this level we had to run the '/challenge/run' command which gave the incorrect directory warning and thus gave the actual path. After navigating to the given directory using 'cd' command we ran the command again to obtain the flag. 
