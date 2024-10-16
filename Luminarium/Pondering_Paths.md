@@ -16,7 +16,7 @@ In this level we had to run the `/challenge/run` command which gave the incorrec
 In this challenge we need to execute the `/challenge/run` program from a specific path (which it will tell us). You'll need use `cd` command to navigate to that directory before rerunning the challenge program and then obtain the flag.
 
 # Implicit relative paths, from /
-A relative path is any path that does not start at root (i.e., it does not start with /).
+A relative path is any path that does not start at root (i.e., it does not start with /). 
 A relative path is interpreted relative to your current working directory (cwd).First we get into the root directory and then run the `challenge/run`.
 
 # Explicit relative paths, from /
