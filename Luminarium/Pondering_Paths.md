@@ -18,3 +18,17 @@ In this challenge we need to execute the `/challenge/run` program from a specifi
 # Implicit relative paths, from /
 A relative path is any path that does not start at root (i.e., it does not start with /).
 A relative path is interpreted relative to your current working directory (cwd).First we get into the root directory and then run the `challenge/run`.
+
+# Explicit relative paths, from /
+In most operating systems, including Linux, every directory has two implicit entries that you can reference in paths: . and ... The first, ., refers right to the same directory, so the following absolute paths are all identical to each other:
+    /challenge
+    /challenge/.
+    /challenge/./././././././././
+    /./././challenge/././
+The following relative paths are also all identical to each other:
+    challenge
+    ./challenge
+    ./././challenge
+    challenge/.
+This challenge we use `.` in our relative paths to get the flag. We use the commands `cd /` to navigate to root and then `./challenge/run` to obtain the flag. `.` indicates the current directory we navigated to at the beginning. 
+
