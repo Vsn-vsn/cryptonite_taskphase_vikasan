@@ -23,3 +23,21 @@ A relative path is interpreted relative to your current working directory (cwd).
 In most operating systems, including Linux, every directory has two implicit entries that you can reference in paths: . and ... The first, ., refers right to the same directory, so 
 This challenge we use `.` in our relative paths to get the flag. We use the commands `cd /` to navigate to root and then `./challenge/run` to obtain the flag. `.` indicates the current directory we navigated to at the beginning. 
 
+# Implicit relative path
+In this level, we'll practice referring to paths using `.` a bit more. This challenge we run it from the `/challenge` directory.
+We navigate using `cd /challenge` and the use `./run` , a relative path, invoked from the right directory to obtain the flag.
+
+# Home sweet home
+In this challenge, /challenge/run will write a copy of the flag to any file you specify as an argument on the command line, with these constraints:
+    1. The argument must be an absolute path.
+    2. The path must be inside your home directory.
+    3. Before expansion, the argument must be three characters or less.
+ 
+It is given that an absolute path to the target file is to be given as argument to `/challenge/run`.
+It is also given that the argument should be less than or equal to 3 characters before expanding (`~/` is a must for an absolute path in home directory, leaving us to choose a single letter for the filename).
+>T he command is `/challenge/run ~/r` where 'r' is the filename.
+    
+
+
+
+
