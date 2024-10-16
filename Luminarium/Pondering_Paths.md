@@ -5,6 +5,6 @@ The Linux filesystem,which is a tree, starts at /. Under that, there are a whole
 In this level we navigated to directories other than the root using absolute path. Here the flag was in 'run' file, which was inturn kept in the 'challenge' directory. 
 We invoked the 'run' through the command '/challenge/run' which is an absolute path.
 
-# Position thy selfbin
+# Position thy self
 In this level we had to navigate to another directory using th 'cd' command. The 'cd' command is used to change our present working directory. For this challenge we had to navigate using 
 'cd  /usr/bin' and then run '/challenge/run' to obtain the flag.
