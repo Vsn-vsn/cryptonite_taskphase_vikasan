@@ -11,3 +11,9 @@ In this level we had to navigate to another directory using th 'cd' command. The
 
 # Position elsewhere
 In this level we had to run the '/challenge/run' command which gave the incorrect directory warning and thus gave the actual path. After navigating to the given directory using 'cd' command we ran the command again to obtain the flag. 
+
+# Position yet elsewhere
+In this challenge we need to execute the /challenge/run program from a specific path (which it will tell us). You'll need use 'cd' command to navigate to that directory before rerunning the challenge program and then obtain the flag.
+
+# Implicit relative paths, from /
+> A relative path is any path that does not start at root (i.e., it does not start with /).
