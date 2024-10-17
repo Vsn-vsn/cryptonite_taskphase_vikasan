@@ -46,7 +46,9 @@ In this level we have to use the `find -name flag` command to search for files a
 # linking files
 In Linux, "links" typically refer to symbolic links (symlinks) and hard links. These allow files and directories to reference other files or directories without duplicating data.
 1. A symbolic link is a file that points to another file or directory. It's like a shortcut in Windows. If the original file is deleted, the symbolic link becomes broken.
-2. A hard link is a direct reference to the same inode as the original file. Unlike symlinks, hard links are tied directly to the file’s data, so even if the original file is deleted, the hard link still holds the data.  
+2. A hard link is a direct reference to the same inode as the original file. Unlike symlinks, hard links are tied directly to the file’s data, so even if the original file is deleted, the hard link still holds the data.
+
+  
 In this level, we will learn about symbolic links. Symbolic links are created with the `ln` command with the `-s` argument. `ln -s /path/to/original /path/to/link` is how we create a symlink.  
 A symlink can be identified as such with a few methods. For example, the `file` command, which takes a filename and tells you what type of file it is and will recognize symlinks.  
 In this level we need to first create a symlink of the `/flag` by using the command `ln -s /flag /home/hacker/not-the-flag`. After this a symlink to the `flag` file is created. Then we run `/challenge/catflag` which reads out the contents from the `/home/hacker/not-the-flag` file.
