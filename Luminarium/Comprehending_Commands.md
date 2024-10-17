@@ -50,6 +50,6 @@ In Linux, "links" typically refer to symbolic links (symlinks) and hard links. T
 
   
 In this level, we will learn about symbolic links. Symbolic links are created with the `ln` command with the `-s` argument. `ln -s /path/to/original /path/to/link` is how we create a symlink.  
-A symlink can be identified as such with a few methods. For example, the `file` command, which takes a filename and tells you what type of file it is and will recognize symlinks.  
+A symlink can be identified as such with a few methods. For example, the `file` command, will recognize symlinks.  
 In this level we need to first create a symlink of the `/flag` by using the command `ln -s /flag /home/hacker/not-the-flag`. After this a symlink to the `flag` file is created. Then we run `/challenge/catflag` which reads out the contents from the `/home/hacker/not-the-flag` file.
 
