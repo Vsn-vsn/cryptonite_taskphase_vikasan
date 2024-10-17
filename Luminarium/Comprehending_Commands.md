@@ -27,3 +27,10 @@ In this level we need to create two files, namely 'pwn' and 'college' and then o
 # removing file
 In a practical scenario we need to remove the unwanted files or the files that are needed no longer. In such cases `rm` command is helpful. The `rm` command is used to remove files.  
 In this level  we need to remove the `delete_me` file from our home directory. At first we run the `ls` command to check if the file is there in the directory. Once confirmed, we use the `rm delete_me` command to remove the file. We check if the file has been deleted or not by using the `ls` command again. To obtain the flag we run the `/challenge/check`. 
+
+# hidden files
+The `ls` command when used does not list all the directories and files. The files/directories that start with a `.` is categorized as hidden and they are not listed out when we use the `ls` command. To overcome this we use the `ls -la` command, which means list-all files and directories including the hidden ones.  
+In this level we need to find the flag by accessing a hidden file in the directory `/`. We navigate `cd /` and then list out all the files using `ls -la` command. A hidden file `.flag-80982409812209` is found. The we use the `cat flag-80982409812209` command to obtain the flag.
+
+# An Epic Filesystem Quest
+In this level we have to use all the knowledge about the `ls`,`cd`,`cat` commands and the `path navigation` to find clues and obtain the flag. Patience and reading the clues carefully is important in this level to move ahead. 
