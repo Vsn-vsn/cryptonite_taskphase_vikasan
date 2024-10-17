@@ -25,5 +25,5 @@ First we navigate to `cd /challenges/files`, then run `ls` command to list out a
 
 # Exclusionary Globbing
 Sometimes, we want to filter out files in a glob. The `[]` helps us to do this. If the first character in the brackets is a `!` or (in newer versions of bash) a `^`, the glob inverts, and that bracket instance matches characters that aren't listed.  
-In this level we need to navigate to `cd /challenge/files` and run `/challenge/run` with all files that don't start with `p, w, or n!`. We use the command `../run [!pwn]*` to list all the that do not start with `p,w,n`.
+In this level we need to navigate to `cd /challenge/files` and run `/challenge/run` with all files that don't start with `p, w, or n`. We use the command `../run [!pwn]*` to list all the that do not start with `p,w,n`.
 > `../run` is equivalent to `/challenge/run` command
