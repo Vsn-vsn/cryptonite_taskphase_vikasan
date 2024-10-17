@@ -34,3 +34,20 @@ In this level we need to find the flag by accessing a hidden file in the directo
 
 # An Epic Filesystem Quest
 In this level we have to use all the knowledge about the `ls`,`cd`,`cat` commands and the `path navigation` to find clues and obtain the flag. Patience and reading the clues carefully is important in this level to move ahead. 
+
+# making directories
+Linux also provides the provision to make directories using the command line.To make a directory we use the `mkdir` command. eg: `mkdir new_dir`.  
+In this level we make a directory inside the `tmp` directory. We use the command `mkdir pwn` after we navigate `cd /tmp`. We can check if the directory is made using the `ls` command. Then we navigate `cd pwn` and make a file, college, using the command `touch college`. To obtain the flag we run `/challenge/run` to indicate that we have followed the steps.
+
+# finding files
+The `find` command in Linux is used to search for files and directories within a directory hierarchy. It has a wide range of options to filter the search results based on different criteria like name, size, type, permissions, etc. If we don't specify a search criteria, `find` matches every file. eg: `find -name my_subfile`,finds the my_subfile file.  
+In this level we have to use the `find -name flag` command to search for files and directories named flag. Then we need to navigate into different directories to obtain the flag. 
+
+# linking files
+In Linux, "links" typically refer to symbolic links (symlinks) and hard links. These allow files and directories to reference other files or directories without duplicating data.
+1. A symbolic link is a file that points to another file or directory. It's like a shortcut in Windows. If the original file is deleted, the symbolic link becomes broken.
+2. A hard link is a direct reference to the same inode as the original file. Unlike symlinks, hard links are tied directly to the file’s data, so even if the original file is deleted, the hard link still holds the data.  
+In this level, we will learn about symbolic links. Symbolic links are created with the `ln` command with the `-s` argument. `ln -s /path/to/original /path/to/link` is how we create a symlink.  
+A symlink can be identified as such with a few methods. For example, the `file` command, which takes a filename and tells you what type of file it is and will recognize symlinks.  
+In this level we need to first create a symlink of the `/flag` by using the command `ln -s /flag /home/hacker/not-the-flag`. After this a symlink to the `flag` file is created. Then we run `/challenge/catflag` which reads out the contents from the `/home/hacker/not-the-flag` file.
+
