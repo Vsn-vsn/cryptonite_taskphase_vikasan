@@ -26,4 +26,4 @@ In this level we need to create two files, namely 'pwn' and 'college' and then o
 
 # removing file
 In a practical scenario we need to remove the unwanted files or the files that are needed no longer. In such cases `rm` command is helpful. The `rm` command is used to remove files.
-<p> In this level  we need to remove the `delete_me` file from our home directory. At first we run the `ls` command to check if the file is there in the directory. Once confirmed, we use the `rm delete_me` command to remove the file. We check if the file has been deleted or not by using the `ls` command again. To obtain the flag we run the `/challenge/check`. </p>
+In this level  we need to remove the `delete_me` file from our home directory. At first we run the `ls` command to check if the file is there in the directory. Once confirmed, we use the `rm delete_me` command to remove the file. We check if the file has been deleted or not by using the `ls` command again. To obtain the flag we run the `/challenge/check`. 
