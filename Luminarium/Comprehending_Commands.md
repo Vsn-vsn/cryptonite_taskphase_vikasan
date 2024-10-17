@@ -25,5 +25,5 @@ We can use the command `touch` to create new files in our directory.
 In this level we need to create two files, namely 'pwn' and 'college' and then obtain the flag by running `/challenge/run`. We create the new file in 'tmp' directory by using the command `touch pwn` and `touch college` after we navigate to 'tmp' using `cd /tmp`.
 
 # removing file
-In a practical scenario we need to remove the unwanted files or the files that are needed no longer. In such cases `rm` command is helpful. The `rm` command is used to remove files.
+In a practical scenario we need to remove the unwanted files or the files that are needed no longer. In such cases `rm` command is helpful. The `rm` command is used to remove files.  
 In this level  we need to remove the `delete_me` file from our home directory. At first we run the `ls` command to check if the file is there in the directory. Once confirmed, we use the `rm delete_me` command to remove the file. We check if the file has been deleted or not by using the `ls` command again. To obtain the flag we run the `/challenge/check`. 
