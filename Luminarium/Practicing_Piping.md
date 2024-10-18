@@ -37,3 +37,26 @@ So we first redirect using `/challenge/run >> /tmp/data.txt` and then we obtain 
 We can use this using the `|` (pipe) operator to avoid the need to store results to a file.  Standard output from the command to the left of the pipe will be connected to (piped into) the standard input of the command to the right of the pipe.  
 In this level we need to run `/challenge/run` will output a hundred thousand lines of text, including the flag. We need to grep for the flag from that.  
 First we navigate to `cd /challenge` and then obtain the flag by running `./run | grep 'pwn.college' `.
+
+# grepping errors
+The `>` operator redirects a given fd to a file, and we've used `2>` to redirect `fd 2`, the standard error. The `|` operator redirects only standard output to another program, and there is no `2|` form of the operator. It can only redirect standard output. However, the shell has `>&` operator, which redirects a file descriptor to another `fd`. We can have a two-step process to `grep` through errors: At first, we redirect standard error to standard output `2>& 1` and then pipe normally using `|`.  
+In this level we need to redirect the error using `2>& 1` command. At first we need to navigate to `cd /challenge` and then we follow the command `./run 2>& 1 | grep pwn.college` to obtain the flag. The stderr is redirected to the stdout and then we can easily `grep` to get our flag.
+
+# Duplicating piping data with tee
+The `tee` command in Linux is a utility that allows you to redirect the output of a command to both a file and standard output simultaneously. This is useful when we want to see the data as it flows through between the commands to debug undesired outcomes. The `tee` command, named after a "T-splitter" from plumbing pipes, duplicates data flowing through our pipes to any number of files specified.   
+Here we do `/challenge/pwn | tee check | /challenge/college`  to monitor the output of pwn to `check` file and the terminal. The we use `cat check` to get the hint in finding the flag. The contents display the hint that we need to use  
+Usage: /challenge/pwn --secret [SECRET_ARG]
+SECRET_ARG should be "U3WQ7YK_"  
+The we use the command `/challenge/pwn --secret U3WQ7YK_ | /challenge/college` to obtain the flag.
+
+# Writing to multiple programs
+We can duplicate our files with `tee` command. Linux follows the philosophy that "everything is a file". This is, the system strives to provide file-like access to most resources, including the input and output of running programs.The shell follows this philosophy, allowing you to, for example, use any utility that takes file arguments on the command line (such as tee) and hook it up to the input or output side of a program. This is done using what's called `Process Substitution`. If you write an argument of `>(rev)`, bash will run the rev command (this command reads data from standard input, reverses its order, and writes it to standard output), but hook up its input to a temporary file that it will create. This is not a real file, so it is called a `named pipe`.  
+In this level we need to duplicate the output of `/challenge/hack` as input to both the `/challenge/the` and the `/challenge/planet` commands. This can be done as `/challenge/hack | tee >( /challenge/the) | /challenge/planet`to obtain the flag. Output of `/challenge/hack` will be written to both the terminal and the output of a process substitution. The process substitution. `>( /challenge/the)` creates a temporary file and redirects the output of tee to that file. The file is then passed as an argument to the `/challenge/planet` command.
+
+# Split-piping stderr and stout
+`/challenge/hack`: this produces data on stdout and stderr
+`/challenge/the`: you must redirect hack's stderr to this program
+`/challenge/planet`: you must redirect hack's stdout to this program  
+
+We need to redirect output of `/challenge/hack` as input into `/challenge/planet` and its error into `/challenge/the`
+`/challenge/hack 2> >(/challenge/the) > >(/challenge/planet)`
