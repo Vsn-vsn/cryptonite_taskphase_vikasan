@@ -26,7 +26,7 @@ In this level, we need to redirect the output of `/challenge/run`, to `myflag`, 
 # Redirecting input
 We can redirect input to programs! This is done using `<`.  
 In this level, we will practice using `/challenge/run`, which will require us to redirect the `PWN` file to it and have the `PWN` file contain the value `COLLEGE`.  
-Hence at first we write the PWN by `echo COLLEGE >> PWN` and then we run `/challenge/run < PWN` to obtain the flag.
+Hence at first we write the PWN file by `echo COLLEGE >> PWN` and then we run `/challenge/run < PWN` to obtain the flag.
 
 # Grepping stored results
 The grep command is a powerful tool used to search for patterns within text files.  
@@ -36,4 +36,4 @@ So we first redirect using `/challenge/run >> /tmp/data.txt` and then we obtain 
 # Grepping live output
 We can use this using the `|` (pipe) operator to avoid the need to store results to a file.  Standard output from the command to the left of the pipe will be connected to (piped into) the standard input of the command to the right of the pipe.  
 In this level we need to run `/challenge/run` will output a hundred thousand lines of text, including the flag. We need to grep for the flag from that.  
-First we navigate to `cd /challenges` and then obtain the flag by running `./run | grep 'pwn.college' `.
+First we navigate to `cd /challenge` and then obtain the flag by running `./run | grep 'pwn.college' `.
