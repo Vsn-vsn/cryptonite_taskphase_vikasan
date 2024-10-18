@@ -17,7 +17,8 @@ Hence we first navigate to `cd /challenges` and then we do `./run >> /home/hacke
 We can also redirect the error channel of commands. Here, we'll learn about File Descriptor numbers. A File Descriptor (FD) is a number the describes a communication channel in Linux.
 1. FD 0: Standard Input
 2. FD 1: Standard Output
-3. FD 2: Standard Error  
+3. FD 2: Standard Error
+   
 When we redirect process communication, we do it by FD number. But some FD numbers need not be written explicitly. For example, a `>` without a number implies `1>`, which redirects FD 1 (Standard Output), both the usages yield the same result.  
 If we have a command that might produce data via standard error, then we can redirect those errors. For example `run 2> errors.log` will redirect standard error (FD 2) to the `errors.log` file.   
 In this level, we need to redirect the output of `/challenge/run`, to `myflag`, and the "errors" to `instructions`. So we write the command `/challenge/run >myflag 2>instructions` to redirect the flag into `myflag` file and errors into the `instructions` file.
