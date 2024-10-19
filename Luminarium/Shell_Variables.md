@@ -18,7 +18,8 @@ By default, variables that you set in a shell session are local to that shell pr
   
 
 In this level we first navigate to `cd /challenge` to set the `PWN` variable as COLLEGE and `COLLEGE` variable as PWN.
-``` export PWN=COLLEGE
+```
+export PWN=COLLEGE
 COLLEGE=PWN
 ./run
 ```
