@@ -38,7 +38,7 @@ The `read` command is a built-in shell utility that allows us to read user input
 Common options used with the `read` command are-
  1. `-p` prompt: Sets a prompt to display before reading input. eg: `read -p "INPUT: " MY_VARIABLE`
  2. `-s`: Reads input silently (without echoing characters to the screen).
- 3. `- n`: Reads at most n characters.
+ 3. `-n n`: Reads at most n characters.
  4. `-t` timeout: Sets a timeout in seconds.  
    
  Example:
