@@ -43,10 +43,11 @@ Common options used with the `read` command are-
  4. `-t` timeout: Sets a timeout in seconds.  
    
  Example:
-```INPUT: hacker@dojo:~$ read MY_VARIABLE
+```
+ INPUT: hacker@dojo:~$ read MY_VARIABLE
  INPUT: Hello!
  INPUT: hacker@dojo:~$ echo "You entered: $MY_VARIABLE"
-OUTPUT: You entered: Hello!
+ OUTPUT: You entered: Hello!
 ```
 In this level we use the command `read PWN` and then as the cursor goes to the next line as we hit ENTER we set the value `COLLEGE` by typing it and ENTERing. Thus we obtain the flag.
 
