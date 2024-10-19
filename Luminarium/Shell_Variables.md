@@ -18,8 +18,8 @@ By default, variables that you set in a shell session are local to that shell pr
   
 
 In this level we first navigate to `cd /challenge` to set the `PWN` variable as COLLEGE and `COLLEGE` variable as PWN.
-``` export pwn=voll
-coll=pwn
+``` export PWN=COLLEGE
+COLLEGE=PWN
 ./run
 ```
 The variable `COLLEGE` is not inherited by `/challenge/run` but variable `PWN` is. Hence we obtain the flag.
