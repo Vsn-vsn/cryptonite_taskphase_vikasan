@@ -11,3 +11,6 @@ We first set ` PATH=/challenge/more_commands/` and then run `/challenge/run` to 
 
 # Adding commands
 In this level we meed to make a shell script called `win`, add its location to the `PATH`, and enable `/challenge/run` to find the flag.
+
+
+# Hijacking commands
