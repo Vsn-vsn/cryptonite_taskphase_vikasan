@@ -24,4 +24,19 @@ In this level `/flag` file is owned by root, and we can't change that, but we mu
 
 # Executable files
 Executable files in Linux are files that can be run as programs. These files contain binary code or scripts that the operating system can execute.  
-In this level, the `/challenge/run` program will give us the `flag`, but we must first make it executable. We navigate to `cd /challenge` and then see the permissions of `run` file is `-r--r--r--` by the use of `ls -l` command. We the change it to executable by the command `chmod u+x,g+x,o+x run` and obtain the flag by running `./run`.
+In this level, the `/challenge/run` program will give us the `flag`, but we must first make it executable. We navigate to `cd /challenge` and then see the permissions of `run` file is `-r--r--r--` by the use of `ls -l` command. We then change it to executable by the command `chmod u+x,g+x,o+x run` and obtain the flag by running `./run`.
+
+# Permission tweaking practice
+In this level we need to change the permissions of the `/challenge/pwn` file in specific ways a few times in a row. If we get the permissions right eight times in a row, the challenge will let us `chmod /flag` to make it readable and obtain the flag.  
+The level needs us to change the permissions for the file 8 times, and hence get the flag.
+
+# Permission setting practice
+In addition to adding and removing permissions, as in the previous level, `chmod` can also simply set permissions overwriting the old ones. This is done by using `=` instead of `-` or `+`. For example `u=rw` sets read and write permissions for the user, and wipes the execute permission.  
+`chmod g=r,u=rw /challenge/pwn` will set the user permissions to read and write, and the group and world permissions to read-only.  
+`chmod u=rw,g=r,o=- /challenge/pwn` will set the user permissions to read and write, the group permissions to read-only, and the world permissions to nothing.  
+In this level we need to use more radical permission changes using `=` and ,`-` chaining to get the flag.
+
+# The SUID bit
+There are many cases in which non-root users need elevated access to do certain system tasks. The system admin can't be there to give them the password every time a user wanted to do a task that only `root/sudoers` can do. The *Set User ID* or `SUID` permissions bit allows the user to run a program as the owner of that program's file.  
+For instance in `-rwsr-xr-x 1 root root 232416 Dec 1 11:45 /usr/bin/sudo`, the `s` part in place of the executable bit means that the program is executable with `SUID`. It means that, regardless of any user that runs the program, the program will be executed as the owner `user`. Syntax: **chmod u+s [program]**.  
+In this level we add the `SUID` bit to the `/challenge/getroot` program by using the command `chmod u+s /chllenge/getroot`. Then we spawn our root shell by the command `/challenge/getroot` and obtain the flag by 'cat'ing `/flag` through the command `cat /flag`.
