@@ -1,7 +1,7 @@
 # Listing processes 
 The `ps` command in Linux is used to display information about currently running processes on the system. It provides a snapshot of the active processes and their details such as process id(PID), cpu time etc.  
 There are two ways to specify arguments:  
-1.` Standard Syntax`: It displays all processes in a tree format with full details. We can use -e to list "every" process and -f for a "full format" output, including arguments. These can be combined into a single argument `-ef`.
+1.` Standard Syntax`: It displays all processes in a tree format with full details. We can use -e to list "every" process and -f for a "full format" output, including arguments. These can be combined into a single argument `-ef`.  
 2. `BSD Syntax`: It displays a detailed list of all running processes, includg.ing those started by other users and system processes.We can use this to list processes for all users. `x` to list processes that aren't running in a terminal, and `u` for a *user-readable* output. These can be combined into a single argument aux.  
   
 `ps -ef` additionally outputs the Parent Process ID (PPID), which is the PID of the process that spawns another process, whereas `ps aux` outputs the percentage of total system CPU and Memory that the process is utilizing.  
