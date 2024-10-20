@@ -1,4 +1,4 @@
-> The full list of users on a Linux system is specified in the /etc/passwd file  
+> The full list of users on a Linux system is specified in the /etc/passwd file and now in /etc/shadow file.
 
 # Becoming root with su
 Becoming root is a fairly common action that Linux users take. There are two utilities used for this purposes: `su` (switch user) and `sudo` (superuser do). Because it has the `SUID` bit set, `su` runs as root. Running as root, it can start a root shell and before allowing the user to access the privileges of root, it checks to make sure that the user knows the root password.  
