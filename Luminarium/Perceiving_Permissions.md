@@ -5,4 +5,4 @@ Every file in Linux is owned by a user on the system. Most often,that `user` is 
 In this level, we will practice changing the owner of the `/flag` file to the hacker user.We change the ownership to *hacker* by `chown hacker /flag` and the obtain the flag by running `./flag` .
 
 # Groups and Files
-
+In Linux, files have both an owning `user` and `group`. A group can have multiple users in it, and a user can be a member of multiple groups.
