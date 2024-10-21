@@ -1,5 +1,5 @@
 # The Root
-The Linux files ystem,which is a tree, starts at /. Under that, there are a whole lot of other directories, configuration files, programs, and (here) flags.We can invoke a program by providing its path on the command line. In this level, the flag was hidden in a program right in / (root), called pwn. We had to invoke this program using the command `/pwn`. 
+The Linux files ystem,which is a tree, starts at /. Under that, there are a whole lot of other directories, configuration files, programs, and (here) flags.We can invoke a program by providing its path on the command line. In this level, the flag was hidden in a program right in / , called pwn. We had to invoke this program using the command `/pwn`. 
 
 # Program and Absolute paths
 In this level we navigated to directories other than the root using absolute path. Here the flag was in 'run' file, which was in turn kept in the `challenge` directory. 
@@ -21,7 +21,7 @@ A relative path is interpreted relative to your current working directory (cwd).
 
 # Explicit relative paths, from /
 In most operating systems, including Linux, every directory has two implicit entries that you can reference in paths: . and ... The first, ., refers right to the same directory, so 
-This challenge we use `.` in our relative paths to get the flag. We use the commands `cd /` to navigate to root and then `./challenge/run` to obtain the flag. `.` indicates the current directory we navigated to at the beginning. 
+This challenge we use `.` in our relative paths to get the flag. We use the commands `cd /` to navigate and then `./challenge/run` to obtain the flag. `.` indicates the current directory we navigated to at the beginning. 
 
 # Implicit relative path
 In this level, we'll practice referring to paths using `.` a bit more. This challenge we run it from the `/challenge` directory.
