@@ -8,8 +8,8 @@ In this level, the argument to the `--printfile` argument is the path of the fla
 Here we use `/challenge/challenge --printfile /flag` to obtain the flag.
 
 # Reading manuals
-This level introduces the man command. man is short for manual, and will display (if available) the manual of the command you pass as an argument. We can scroll around the manpage with your arrow keys and PgUp/PgDn. When we're done reading the manpage, you can hit `q` to quit.  
-In this level we ned to read the man page properly to get the correct usage of the command to obtain the flag. When we use the `man challenge` command and read the description. The description gives the proper command for finding the flag, i.e, `--ekgtqd NUM, print the flag if NUM is 287` . Then we run `/challenge/challenge --ekgtqd 287` to obtain the flag.
+This level introduces the `man` command. `man` is short for manual, and will display (if available) the manual of the command we pass as an argument. We can scroll around the manpage with the arrow keys and PgUp/PgDn. When we're done reading the manpage, you can hit `q` to quit.  
+In this level we need to read the man page properly to get the correct usage of the command to obtain the flag. We use the `man challenge` command and read the description. The description gives the proper command for finding the flag, i.e, `--ekgtqd NUM, print the flag if NUM is 287` . Then we run `/challenge/challenge --ekgtqd 287` to obtain the flag.
 
 # Searching manuals 
 We can scroll man pages with the arrow keys (and PgUp/PgDn) and search with `/`. After searching, we can hit `n` to go to the next result and `N` to go to the previous result. Instead of `/`, you can use `?` to search backwards.  
