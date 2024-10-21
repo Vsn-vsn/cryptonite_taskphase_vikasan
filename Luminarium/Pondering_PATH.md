@@ -10,7 +10,14 @@ This level's `/challenge/run` will run the `win` command via its bare name, but 
 We first set ` PATH=/challenge/more_commands/` and then run `/challenge/run` to obtain the flag. The `PATH` now has the path to the directory containing `win` command.
 
 # Adding commands
-In this level we meed to make a shell script called `win`, add its location to the `PATH`, and enable `/challenge/run` to find the flag.
-
+In this level we meed to make a shell script called `win`, add its location to the `PATH`, and enable `/challenge/run` to find the flag.  
+First write the script `nano win` and in it we write `read flag < /flag` along with `echo $flag`, to redirect the `/flag` as the value to `flag` variable. We then give the `execute` permission to `win` as `chmod a+x win` and set the `PATH` variable to `PATH="/home/hacker"`. We then run `/challenge/run` to obtain the flag.
 
 # Hijacking commands
+This level will delete the flag using the `rm` command.  
+Since we dont want the `rm` to delete the flag, we can create our own version of `rm` command that will read and print the flag instead.Hence we do `nano rm` and in it we  write `read flag < /flag` along with `echo $flag`, to redirect the `/flag` as the value to `flag` variable.  
+```
+chmod a=rwx rm
+PATH=/home/hacker
+/challenge/run
+```
